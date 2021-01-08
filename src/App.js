@@ -1,30 +1,46 @@
 import './App.css';
+const title = 'If Animals Kissed Good Night'
+const author = 'Ann Whitford Paul'
+const image_url = 'https://images-na.ssl-images-amazon.com/images/I/817T4J3dzhL._AC_UL200_SR200,200_.jpg'
+
+const books = [
+  {
+    image_url: 'https://images-na.ssl-images-amazon.com/images/I/817T4J3dzhL._AC_UL200_SR200,200_.jpg',
+    title: 'If Animals Kissed Good Night',
+    author: 'Ann Whitford Paul',
+    cost: 4.79,
+  },
+  {
+    image_url: 'https://images-na.ssl-images-amazon.com/images/I/910lu-HKDYL._AC_UL200_SR200,200_.jpg',
+    title: 'Little Blue Truck\'s Valentine',
+    author: 'Alice Schertle',
+    cost: 12.19,
+  },
+  {
+    image_url: 'https://images-na.ssl-images-amazon.com/images/I/A1elFK9VYEL._AC_UL200_SR200,200_.jpg',
+    title: 'Bronco and Friends: A Party to Remember',
+    author: 'Tim Teblow',
+    cost: 15.22,
+  }
+]
 
 function App() {
-  return <section className='book-list'>
-    <Book />
-    <Book />
-    <Book />
-    <Book />
+  return <section className='book-list'>{books.map(book => {
+    return <Book book={book} />
+  })}
   </section>
 }
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
+  const { image_url, title, author, cost, children } = props.book
   return <article className='book'>
-    <Image />
-    <Title />
-    <Author />
+    <img src={image_url} alt={title} />
+    <h1 style={{ color: 'blue' }}>{title}</h1>
+    <h4>{author}</h4>
+    <h5>{cost}</h5>
+    <p>{children}</p>
   </article>
 }
 
-const Image = () => {
-  return <img src="https://images-na.ssl-images-amazon.com/images/I/817T4J3dzhL._AC_UL200_SR200,200_.jpg" alt="Untamed" />
-}
-
-const Title = () => {
-  return <h1>If Animals Kissed Good Night</h1>
-}
-const Author = () => {
-  return <h4>Ann Whitford Paul</h4>
-}
 export default App;
