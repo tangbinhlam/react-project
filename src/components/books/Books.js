@@ -38,6 +38,7 @@ const Book = (props) => {
         <p>{children}</p>
         <p>This is new branch</p>
         <p>Dev brach update 1</p>
+        <p>This is second update</p>
     </article>
 }
 
