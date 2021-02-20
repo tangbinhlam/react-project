@@ -39,6 +39,7 @@ const Book = (props) => {
         <p>This is new branch</p>
         <p>Dev brach update 1</p>
         <p>This is second update</p>
+        <p>Dev brach update 2</p>
     </article>
 }
 
