@@ -37,6 +37,7 @@ const Book = (props) => {
         <h5>{cost}</h5>
         <p>{children}</p>
         <p>This is new branch</p>
+        <p>Dev brach update 1</p>
     </article>
 }
 
